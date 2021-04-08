@@ -12,7 +12,7 @@ const Menubar = () => {
                     </div>
                 </Link>
                 <div className='mt-3'>
-                    <Link to='/'><Button className='mr-3 btn-main'>Login</Button></Link>
+                    <Link to='/signin'><Button className='mr-3 btn-main'>Login</Button></Link>
                     <Link to='/'><Button className='btn-main'>Sign Up</Button></Link>
                 </div>
             </div>
