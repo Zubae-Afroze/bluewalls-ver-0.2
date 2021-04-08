@@ -101,7 +101,7 @@ Landing styles
 }
 
 .video-div {
-  width: 650px;
+  width: 950px;
   height: 550px;
   background: rgba(255, 255, 255, 0.55);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -112,8 +112,9 @@ Landing styles
 }
 
 .video-div video {
-  margin-left: 20px;
-  width: 600px;
+  margin-left: 50px;
+  margin-top: 20px;
+  width: 850px;
   height: 500px;
 }
 
