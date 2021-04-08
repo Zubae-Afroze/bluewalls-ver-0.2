@@ -12,8 +12,8 @@ const Menubar = () => {
                     </div>
                 </Link>
                 <div className='mt-3'>
-                    <Button className='mr-3 btn-main'>Login</Button>
-                    <Button className='btn-main'>Sign Up</Button>
+                    <Link to='/'><Button className='mr-3 btn-main'>Login</Button></Link>
+                    <Link to='/'><Button className='btn-main'>Sign Up</Button></Link>
                 </div>
             </div>
         </Container>

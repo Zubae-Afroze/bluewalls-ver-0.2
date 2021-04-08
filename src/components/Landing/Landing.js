@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
     return (
@@ -17,7 +18,7 @@ const Landing = () => {
                 <div className='text-div d-flex flex-column justify-content-around align-items-center ml-md-5'> 
                     <h3>Welcome to</h3>
                     <h1>Bluewalls</h1>
-                    <Button variant='secondary'>Get Started</Button>
+                    <Link to='/'><Button variant='secondary'>Get Started</Button></Link>
                 </div>
             </div>
         </React.Fragment>
