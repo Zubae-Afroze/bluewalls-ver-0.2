@@ -1,11 +1,18 @@
+import React from 'react';
+import Landing from './components/Landing/Landing';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 import './App.css';
 
-function App() {
+
+const App = () => {
   return (
-    <div>
-      <h1>Hello World!</h1>
-    </div>
-  );
+    <Router>
+      <Switch>
+        <Route path='/' component={Landing} exact/>
+      </Switch>
+    </Router>
+  )
 }
 
-export default App;
+export default App
