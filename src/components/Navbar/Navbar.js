@@ -2,10 +2,10 @@ import React from 'react';
 import { Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Menubar = () => {
     return (
         <Container>
-            <div className='d-flex justify-content-between test'>
+            <div className='d-flex justify-content-between'>
                 <Link to='/'>
                     <div className='brand brand-light mt-3'>
                         <h1>Bluewalls</h1>
@@ -20,4 +20,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Menubar
