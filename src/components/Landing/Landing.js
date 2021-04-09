@@ -18,7 +18,7 @@ const Landing = () => {
                 <div className='text-div d-flex flex-column justify-content-around align-items-center ml-md-5'> 
                     <h3>Welcome to</h3>
                     <h1>Bluewalls</h1>
-                    <Link to='/'><Button variant='secondary'>Get Started</Button></Link>
+                    <Link to='/signup'><Button variant='secondary'>Get Started</Button></Link>
                 </div>
             </div>
         </React.Fragment>
