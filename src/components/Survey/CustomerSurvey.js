@@ -17,23 +17,23 @@ const CustomerSurvey = () => {
                     </div>
                 </Link>
                 <div className='survey-block'>
-                    <Link to='/presurvey'><Button variant='secondary'>Go Back</Button></Link>
+                    <div className='back-btn'><Link to='/presurvey'><i class="fas fa-chevron-left"></i>Go Back</Link></div>
                     <Form onSubmit={submitHandler}>
                         <Form.Group>
                             <Form.Label>Question 1</Form.Label>
-                            <Form.Control />
+                            <Form.Control type='text' placeholder='Answer'/>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Question 2</Form.Label>
-                            <Form.Control />
+                            <Form.Control type='text' placeholder='Answer'/>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Question 3</Form.Label>
-                            <Form.Control />
+                            <Form.Control type='text' placeholder='Answer'/>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Question 4</Form.Label>
-                            <Form.Control />
+                            <Form.Control type='text' placeholder='Answer'/>
                         </Form.Group>
                         <Button variant='secondary'>Submit</Button>
                     </Form>
