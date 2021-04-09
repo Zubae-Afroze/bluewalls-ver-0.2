@@ -13,7 +13,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route path='/signin' render={() => (<SignIn />)} />
-        <Route path='/signup' render={() => (<SignUp />)} />
+        <Route path='/signup' component={SignUp} />
         <Route path='/' component={Landing} exact/>
       </Switch>
     </Router>

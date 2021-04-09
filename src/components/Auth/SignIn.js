@@ -13,7 +13,7 @@ const SignIn = () => {
         <div className='bg-sign'>
             <Container>
                 <Link to='/'>
-                    <div className='brand brand-light'>
+                    <div className='brand brand-light mt-3'>
                         <h1>Bluewalls</h1>
                     </div>
                 </Link>
@@ -21,7 +21,7 @@ const SignIn = () => {
                     <div className='alt-block'>
                         <div className='alt-wrap'>
                             <h2>Don't Have an account?</h2>
-                            <Link to='signup'><Button variant='outline-light'>Sign Up</Button></Link>
+                            <Link to='/signup'><Button variant='outline-light'>Sign Up</Button></Link>
                         </div>
                         <div className='main-block'>
                             <Form onSubmit={submitHandler}>

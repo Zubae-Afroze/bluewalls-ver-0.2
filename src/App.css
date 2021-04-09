@@ -218,3 +218,41 @@ Sign In Styles
   height: 40px;
   margin-top: 20px;
 }
+
+/* 
+Sign Up Styles
+*/
+.up-block {
+  position: absolute;
+  width: 500px;
+  height: 600px;
+  top: -10%;
+  left: 5%;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.up-block form {
+  margin-top: 150px;
+  margin-left: 30px;
+}
+
+.up-block form input {
+  width: 400px;
+  padding: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.473);
+  margin: 20px;
+  border-radius: 0;
+}
+
+.up-block button {
+  margin-top: 20px;
+  width: 125px;
+  height: 45px;
+  float: right;
+  margin-right: 50px;
+}
