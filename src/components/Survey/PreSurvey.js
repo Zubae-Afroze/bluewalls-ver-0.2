@@ -21,13 +21,13 @@ const PreSurvey = () => {
                     </div>
                     <div className='option-wrap option-disabled'>
                         <Link to='/presurvey' className='d-flex flex-row justify-content-around align-items-center'>
-                            <div><i class="fas fa-building"></i></div>
+                            <div><i className="fas fa-building"></i></div>
                             <div>Builder</div>
                         </Link>
                     </div>
                     <div className='option-wrap'>
                         <Link to='/customersurvey' className='d-flex flex-row justify-content-around align-items-center'>
-                            <div><i class="fas fa-smile"></i></div>
+                            <div><i className="fas fa-smile"></i></div>
                             <div>Customer</div>
                         </Link>
                     </div>
