@@ -4,8 +4,10 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import SignIn from './components/Auth/SignIn';
 import SignUp from './components/Auth/SignUp';
+import PreSurvey from './components/Survey/PreSurvey';
 
 import './App.css';
+
 
 
 const App = () => {
@@ -13,7 +15,8 @@ const App = () => {
     <Router>
       <Switch>
         <Route path='/signin' render={() => (<SignIn />)} />
-        <Route path='/signup' component={SignUp} />
+        <Route path='/signup' render={() => (<SignUp />)} />
+        <Route path='/presurvey' render={() => (<PreSurvey />)} />
         <Route path='/' component={Landing} exact/>
       </Switch>
     </Router>
