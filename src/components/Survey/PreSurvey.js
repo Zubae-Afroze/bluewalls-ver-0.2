@@ -26,7 +26,7 @@ const PreSurvey = () => {
                         </Link>
                     </div>
                     <div className='option-wrap'>
-                        <Link to='/presurvey' className='d-flex flex-row justify-content-around align-items-center'>
+                        <Link to='/customersurvey' className='d-flex flex-row justify-content-around align-items-center'>
                             <div><i class="fas fa-smile"></i></div>
                             <div>Customer</div>
                         </Link>

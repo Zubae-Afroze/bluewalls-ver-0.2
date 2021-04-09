@@ -7,6 +7,7 @@ import SignUp from './components/Auth/SignUp';
 import PreSurvey from './components/Survey/PreSurvey';
 
 import './App.css';
+import CustomerSurvey from './components/Survey/CustomerSurvey';
 
 
 
@@ -17,6 +18,7 @@ const App = () => {
         <Route path='/signin' render={() => (<SignIn />)} />
         <Route path='/signup' render={() => (<SignUp />)} />
         <Route path='/presurvey' render={() => (<PreSurvey />)} />
+        <Route path='/customersurvey'  render={() => (<CustomerSurvey />)} />
         <Route path='/' component={Landing} exact/>
       </Switch>
     </Router>
