@@ -15,7 +15,7 @@ const PreSurvey = () => {
                     <h1>Please click on any one from below options.</h1>
                     <div className='option-wrap option-disabled'>
                         <Link to='/presurvey' className='d-flex flex-row justify-content-around align-items-center'>
-                            <div><i class="fas fa-user-tie"></i></div>
+                            <div><i className="fas fa-user-tie"></i></div>
                             <div>Investor</div>
                         </Link>
                     </div>

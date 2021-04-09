@@ -28,6 +28,24 @@ npm install react-router-dom
 npm install redux react-redux
 ```
 
+#### Firebase
+
+```shell
+npm install firebase
+```
+
+#### React Redux Firebase
+
+```shell
+npm install react-redux-firebase
+```
+
+#### Redux Firestore
+
+```shell
+npm install redux-firestore
+```
+
 ## Redux Implementation
 
 1. Create a store in Index.js
@@ -73,4 +91,57 @@ ReactDOM.render(
   document.getElementById('root')
 )
 registerServiceWorker()
+```
+
+3. Adding Redux Thunk for dispatching asynchronous actions
+
+```Shell
+npm install redux-thunk
+```
+
+import thunk into redux, in index.js as store enhancer
+
+```js
+import { createStore } from 'redux'
+import rootReducer from './rootReducer'
+import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
+registerServiceWorker()
+```
+
+#### Important
+
+```js
+const store = createStore(
+  rootReducer,
+  compose(
+    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
+    reduxFirestore(firebase, firebaseConfig)
+  )
+)
+
+const rrfProps = {
+  firebase,
+  config: firebaseConfig,
+  dispatch: store.dispatch,
+  createFirestoreInstance,
+}
+
+ReactDOM.render(
+  <Provider store={store}>
+    <ReactReduxFirebaseProvider {...rrfProps}>
+      <App />
+    </ReactReduxFirebaseProvider>
+  </Provider>,
+  document.getElementById('root')
+)
 ```
