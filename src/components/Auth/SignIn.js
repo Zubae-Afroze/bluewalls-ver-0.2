@@ -30,7 +30,7 @@ class SignIn extends Component {
 
         const { auth } = this.props;
 
-        if(auth.uid) return <Redirect to='/' />
+        if(auth.uid) return <Redirect to='/presurvey' />
 
         return (
             <div className='bg-sign'>
