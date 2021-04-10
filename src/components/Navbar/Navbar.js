@@ -16,29 +16,29 @@ const Menubar = (props) => {
 
     return (
         <Container>
-            <div className='d-flex justify-content-between'>
+            <div className='d-md-flex justify-content-between py-2 py-sm-0'>
                 <Link to='/'>
                     <div className='brand brand-light mt-3'>
                         <h1>Bluewalls</h1>
                     </div>
                 </Link>
-                { auth.uid ?
-                <div className='d-flex align-items-center justify-content-center logged-in mt-3 mr-3' 
-                    onClick={() => setDrop(!drop)}
-                >
-                    TU 
+                {auth.uid ?
+                    <div className='d-flex align-items-center justify-content-center logged-in mt-3 mr-3'
+                        onClick={() => setDrop(!drop)}
+                    >
+                        TU
                 </div>
-                :
-                <div className='mt-3'>
-                    <Link to='/signin'><Button className='mr-3 btn-main'>Login</Button></Link>
-                    <Link to='/signup'><Button className='btn-main'>Sign Up</Button></Link>
-                </div>
+                    :
+                    <div className='mt-4 d-flex justify-content-center'>
+                        <Link to='/signin'><Button className='mr-3 btn-main'>Login</Button></Link>
+                        <Link to='/signup'><Button className='btn-main'>Sign Up</Button></Link>
+                    </div>
                 }
                 {
                     drop ? <div className='d-flex flex-column justify-content-center align-items-center mt-3 log-menu'>
-                            <p onClick={clickHandler} className='mt-3'>Logout</p>
-                            <p>Dashboard</p>
-                            </div> : null
+                        <p onClick={clickHandler} className='mt-3'>Logout</p>
+                        <p>Dashboard</p>
+                    </div> : null
                 }
             </div>
         </Container>
