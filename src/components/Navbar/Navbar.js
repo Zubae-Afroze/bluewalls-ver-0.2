@@ -18,7 +18,7 @@ const Menubar = (props) => {
         <Container>
             <div className='d-md-flex justify-content-between py-2 py-sm-0'>
                 <Link to='/'>
-                    <div className='brand brand-light mt-3'>
+                    <div className='brand brand-light pt-3'>
                         <h1>Bluewalls</h1>
                     </div>
                 </Link>
