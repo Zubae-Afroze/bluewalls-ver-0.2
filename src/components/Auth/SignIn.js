@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Container, Form, Button, Alert } from 'react-bootstrap';
-import { Link, Redirect } from 'react-router-dom';
+import { Form, Button, Alert } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { emailAuth } from '../Store/Actions/authActions';
 
-class SignIn extends Component{
-    constructor(props){
+class SignIn extends Component {
+    constructor(props) {
         super(props);
         this.state = {
             email: '',
@@ -34,35 +34,38 @@ class SignIn extends Component{
 
         return (
             <div className='bg-sign'>
-                <Container>
+                <>
                     <Link to='/'>
-                        <div className='brand brand-light mt-3'>
+                        <div className='brand brand-light pt-3 pl-3'>
                             <h1>Bluewalls</h1>
                         </div>
                     </Link>
-                    <div className='d-flex justify-content-center'>
-                        <div className='alt-block'>
-                            <div className='alt-wrap'>
-                                <h2>Don't Have an account?</h2>
-                                <Link to='/signup'><Button variant='outline-light'>Sign Up</Button></Link>
-                            </div>
-                            <div className='main-block'>
-                                <Form onSubmit={this.submitHandler}>
-                                    <Form.Control id='email' onChange={this.changeHandler} type='email' placeholder='Enter Email' />
-                                    <Form.Control id='password' onChange={this.changeHandler} type='password' placeholder='Enter Password' />
-                                    <Button variant='secondary' type='submit'>Log In</Button>
-                                    { authError ? 
-                                        <div style={{ position: 'absolute', bottom: '0', width: '89%', textAlign: 'center'}}>
-                                            <Alert variant={'danger'}>Login Failed</Alert>
-                                        </div> 
-                                    : null}
-                                </Form>
+                    <div className='container-lg d-md-flex flex-md-column justify-content-md-center signup-sec'>
+
+                        <div className='d-flex justify-content-center'>
+                            <div className='alt-block'>
+                                <div className='alt-wrap'>
+                                    <h2>Don't Have an account?</h2>
+                                    <Link to='/signup'><Button variant='outline-light'>Sign Up</Button></Link>
+                                </div>
+                                <div className='main-block d-flex flex-column justify-content-center'>
+                                    <Form onSubmit={this.submitHandler} className='d-flex justify-content-center flex-column align-items-center'>
+                                        <Form.Control id='email' onChange={this.changeHandler} type='email' placeholder='Enter Email' className='my-2' />
+                                        <Form.Control id='password' onChange={this.changeHandler} type='password' placeholder='Enter Password' className='my-2' />
+                                        <Button variant='secondary' className='mt-3' type='submit'>Log In</Button>
+                                        {authError ?
+                                            <div style={{ position: 'absolute', bottom: '0', width: '89%', textAlign: 'center' }}>
+                                                <Alert variant={'danger'}>Login Failed</Alert>
+                                            </div>
+                                            : null}
+                                    </Form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </Container>
+                </>
             </div>
-        )      
+        )
     }
 }
 

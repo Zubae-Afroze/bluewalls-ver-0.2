@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import { Container, Form, Button, Alert } from 'react-bootstrap';
-import { Link, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { signUp } from '../Store/Actions/authActions';
+import React from 'react'
+import { Form, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 class SignUp extends Component{
     constructor(props){
@@ -37,55 +35,34 @@ class SignUp extends Component{
         console.log(this.state)
     }
 
-    render() {
-        const { auth } = this.props;
-        if(auth.uid) return <Redirect to='/presurvey' />
-        return (
-            <div className='bg-sign'>
-                <Container>
-                    <Link to='/'>
-                        <div className='brand brand-light mt-3'>
-                            <h1>Bluewalls</h1>
+    return (
+        <div className='bg-sign'>
+            <Link to='/'>
+                <div className='brand brand-light pt-4 pl-3'>
+                    <h1>Bluewalls</h1>
+                </div>
+            </Link>
+            <div className='container-lg d-md-flex flex-md-column justify-content-md-center signup-sec'>
+                <div className='d-flex justify-content-center'>
+                    <div className='alt-block'>
+                        <div className='alt-wrap'>
+                            <h2>Already Have an account?</h2>
+                            <Link to='/signin'><Button variant='outline-light'>Sign In</Button></Link>
                         </div>
-                    </Link>
-                    <div className='d-flex justify-content-center'>
-                        <div className='alt-block'>
-                            <div className='alt-wrap'>
-                                <h2>Already Have an account?</h2>
-                                <Link to='/signin'><Button variant='outline-light'>Sign In</Button></Link>
-                            </div>
-                            <div className='up-block'>
-                                <Form onSubmit={this.submitHandler}>
-                                    <Form.Control id='name' type='text' onChange={this.changeHandler} placeholder='Enter your name' />
-                                    <Form.Control id='email' type='email' onChange={this.changeHandler} placeholder='Enter Email' />
-                                    <Form.Control id='password' type='password' onChange={this.changeHandler} placeholder='Enter Password' />
-                                    <Form.Control id='confirmPassword' type='password' onChange={this.changeHandler} placeholder='Confirm Password' />
-                                    <Button variant='secondary' type='submit'>Sign Up</Button>
-                                    { this.logger === true ? 
-                                        <div style={{ position: 'absolute', bottom: '0', width: '89%', textAlign: 'center'}}>
-                                            <Alert variant={'danger'}>Please re-enter the password</Alert>
-                                        </div> 
-                                    : null}
-                                </Form>
-                            </div>
+                        <div className='up-block d-flex   flex-column justify-content-center'>
+                            <Form onSubmit={submitHandler} className='d-flex justify-content-center flex-column align-items-center '>
+                                <Form.Control type='text' placeholder='Enter your name' className='my-2' />
+                                <Form.Control type='email' placeholder='Enter Email' className='my-2' />
+                                <Form.Control type='password' placeholder='Enter Password' className='my-2' />
+                                <Form.Control type='password' placeholder='Confirm Password' className='my-2' />
+                                <Button variant='secondary' className='mt-2 ' type='submit'>Sign Up</Button>
+                            </Form>
                         </div>
                     </div>
-                </Container>
+                </div>
             </div>
-        )
-    }
-}
-
-const mapStateToProps = (state) => {
-    return {
-        auth: state.firebase.auth
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        signUp: (newUser) => dispatch(signUp(newUser))
-    }
+        </div>
+    )
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
