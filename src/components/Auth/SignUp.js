@@ -31,7 +31,7 @@ class SignUp extends Component{
                 match: true
             })
         } else {
-            
+            this.props.signUp(this.state);
         }
     }
     render() {
