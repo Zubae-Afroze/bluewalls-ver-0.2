@@ -1,8 +1,14 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const PreSurvey = () => {
+const PreSurvey = (props) => {
+
+    const { auth } = props;
+
+    if(!auth.uid) return <Redirect to='/signin' />
+
     return (
         <div className='bg-pre'>
             <Container>
@@ -37,4 +43,10 @@ const PreSurvey = () => {
     )
 }
 
-export default PreSurvey
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
+
+export default connect(mapStateToProps)(PreSurvey)

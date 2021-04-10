@@ -100,6 +100,42 @@ Navbar Styles
   text-shadow: 2px 5px #000;
 }
 
+.logged-in {
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 1px #fff;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.log-menu {
+  position: absolute;
+  right: 20%;
+  top: 20px;
+  background: #fff;
+  height: 110px;
+  width: 170px;
+  text-align: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  user-select: none;
+}
+
+.log-menu p:hover {
+  color: #ed7877;
+  cursor: pointer;
+}
+
 /* 
 Landing styles
 */

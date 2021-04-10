@@ -9,7 +9,7 @@ var firebaseConfig = {
     storageBucket: "bluewalls-app.appspot.com",
     messagingSenderId: "93935270991",
     appId: "1:93935270991:web:901ada3ae86b2e1509fe3a",
-    measurementId: "G-WHF39T9P38"
+    measurementId: "G-WHF39T9P38",
   };
 
   // Initialize Firebase

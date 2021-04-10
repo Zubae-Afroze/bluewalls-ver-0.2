@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { customerSurveySubmit } from '../Store/Actions/customerSurveySubmit';
@@ -30,6 +30,11 @@ class CustomerSurvey extends Component {
 
     
     render(){
+
+        const { auth } = this.props;
+
+        if(!auth.uid) return <Redirect to='/signin' />
+
         return (
             <div className='bg-customer'>
                 <Container>
@@ -66,10 +71,16 @@ class CustomerSurvey extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
+
 const mapDispatchToProps = (dispatch) => {
     return{
         customerSurveySubmit: (survey) => dispatch(customerSurveySubmit(survey))
     }
 }
 
-export default connect(null, mapDispatchToProps)(CustomerSurvey)
+export default connect(mapStateToProps, mapDispatchToProps)(CustomerSurvey)
