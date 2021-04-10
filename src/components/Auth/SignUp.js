@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signUp } from '../Store/Actions/authActions'
 
@@ -35,6 +35,10 @@ class SignUp extends Component{
         }
     }
     render() {
+        const { auth } = this.props;
+
+        if(auth.uid) return <Redirect to='/presurvey' />
+
         return (
             <div className='bg-sign'>
                 <Link to='/'>
