@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { emailAuth } from '../Store/Actions/authActions'
+import { signUp } from '../Store/Actions/authActions'
 
 class SignUp extends Component{
     constructor(props){
@@ -77,7 +77,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        signIn: (credentials) => dispatch(emailAuth(credentials))
+        signUp: (credentials) => dispatch(signUp(credentials))
     }
 }
 

@@ -6,8 +6,6 @@ import { connect } from 'react-redux';
 
 const Landing = (props) => {
 
-    const { auth } = props;
-
     return (
         <React.Fragment>
             <div className='landing-bg'>
