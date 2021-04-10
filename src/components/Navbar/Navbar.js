@@ -27,6 +27,12 @@ const Menubar = (props) => {
                         onClick={() => setDrop(!drop)}
                     >
                         TU
+                        {
+                    drop ? <div className='d-flex flex-column justify-content-center align-items-center mt-3 log-menu'>
+                        <p onClick={clickHandler} className='mt-3'>Logout</p>
+                        <p>Dashboard</p>
+                    </div> : null
+                }
                 </div>
                     :
                     <div className='mt-4 d-flex justify-content-center'>
@@ -34,12 +40,7 @@ const Menubar = (props) => {
                         <Link to='/signup'><Button className='btn-main'>Sign Up</Button></Link>
                     </div>
                 }
-                {
-                    drop ? <div className='d-flex flex-column justify-content-center align-items-center mt-3 log-menu'>
-                        <p onClick={clickHandler} className='mt-3'>Logout</p>
-                        <p>Dashboard</p>
-                    </div> : null
-                }
+                
             </div>
         </Container>
     )

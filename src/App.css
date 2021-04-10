@@ -116,8 +116,8 @@ Navbar Styles
 .log-menu {
   z-index: 5;
   position: absolute;
-  right: 20px;
-  top: 75px;
+  top: 45px;
+  right: 10px;
   background: #fff;
   height: 110px;
   width: 170px;
