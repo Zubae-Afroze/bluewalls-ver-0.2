@@ -12,25 +12,29 @@ class SignUp extends Component{
             email: '',
             password: '',
             confirmPassword: '',
-            match: null
+            logger: false
         }
     }
 
     changeHandler = (e) => {
         e.preventDefault();
-        [e.target.id] = e.target.value
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+        
     }
  
     submitHandler = (e) => {
         e.preventDefault();
         if (this.state.password !== this.state.confirmPassword) {
             this.setState({
-                ...this.state,
-                match: true
+                ...this.state, 
+                logger: true 
             })
         } else {
-            
+            this.props.signUp(this.state)
         }
+        console.log(this.state)
     }
 
     render() {
@@ -57,7 +61,7 @@ class SignUp extends Component{
                                     <Form.Control id='password' type='password' onChange={this.changeHandler} placeholder='Enter Password' />
                                     <Form.Control id='confirmPassword' type='password' onChange={this.changeHandler} placeholder='Confirm Password' />
                                     <Button variant='secondary' type='submit'>Sign Up</Button>
-                                    { this.match ? 
+                                    { this.logger === true ? 
                                         <div style={{ position: 'absolute', bottom: '0', width: '89%', textAlign: 'center'}}>
                                             <Alert variant={'danger'}>Please re-enter the password</Alert>
                                         </div> 
