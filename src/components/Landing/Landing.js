@@ -2,8 +2,12 @@ import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Landing = () => {
+const Landing = (props) => {
+
+    const { auth } = props;
+
     return (
         <React.Fragment>
             <div className='bg bg-top-negative'>
@@ -18,11 +22,22 @@ const Landing = () => {
                 <div className='text-div d-flex flex-column justify-content-around align-items-center ml-md-5'> 
                     <h3>Welcome to</h3>
                     <h1>Bluewalls</h1>
-                    <Link to='/signup'><Button variant='secondary'>Get Started</Button></Link>
+                    {
+                        auth.uid ?
+                        <Link to='/'><Button variant='secondary'>Go to Dashboard</Button></Link>
+                        :
+                        <Link to='/signup'><Button variant='secondary'>Get Started</Button></Link>
+                    }
                 </div>
             </div>
         </React.Fragment>
     )
 }
 
-export default Landing
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
+
+export default connect(mapStateToProps)(Landing)

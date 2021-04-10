@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Form, Button, Alert } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { emailAuth } from '../Store/Actions/authActions';
 
@@ -27,6 +27,10 @@ class SignIn extends Component{
 
     render() {
         const { authError } = this.props;
+
+        const { auth } = this.props;
+
+        if(auth.uid) return <Redirect to='/' />
 
         return (
             <div className='bg-sign'>
@@ -64,7 +68,8 @@ class SignIn extends Component{
 
 const mapStateToProps = (state) => {
     return {
-        authError: state.auth.authError
+        authError: state.auth.authError,
+        auth: state.firebase.auth
     }
 }
 
