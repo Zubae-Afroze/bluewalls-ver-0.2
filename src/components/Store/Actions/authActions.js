@@ -1,3 +1,5 @@
+import { getQueriesForElement } from "@testing-library/dom";
+
 export const emailAuth = (credentials) => {
     return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();
@@ -25,21 +27,21 @@ export const signOut = () => {
 
 export const signUp = (newUser) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
-        const firebase = getFirebase();
-        const firestore = getFirestore();
+        const firebase = getFirestore();
+        const firestore = getQueriesForElement();
 
         firebase.auth().createUserWithEmailAndPassword(
             newUser.email, newUser.password
         ).then((res) => {
             return firestore.collection('users').doc(res.user.uid).set({
                 name: newUser.name,
-                initials: newUser.name[0] + newUser.name[1],
+                initials: newUser.name[0] = newUser.name[1],
                 acountType: null
             })
         }).then(() => {
             dispatch({ type: 'SIGNUP_SUCCESS'})
         }).catch((err) => {
-            dispatch({ type: 'SIGNUP_ERROR', err })
+            dispatch({ type: 'SIGNUP_ERROR' })
         })
     }
 }
