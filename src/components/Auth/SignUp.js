@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signUp } from '../Store/Actions/authActions'
 
-class SignUp extends Component{
-    constructor(props){
+class SignUp extends Component {
+    constructor(props) {
         super(props);
         this.state = {
             name: '',
@@ -22,7 +22,7 @@ class SignUp extends Component{
             [e.target.id]: e.target.value
         })
     }
- 
+
     submitHandler = (e) => {
         e.preventDefault();
         if (this.state.password !== this.state.confirmPassword) {
@@ -53,18 +53,18 @@ class SignUp extends Component{
                                 <h2>Already Have an account?</h2>
                                 <Link to='/signin'><Button variant='outline-light'>Sign In</Button></Link>
                             </div>
-                            <div className='up-block'>
-                                <Form onSubmit={this.submitHandler}>
-                                    <Form.Control id='name' type='text' onChange={this.changeHandler} placeholder='Enter your name' />
-                                    <Form.Control id='email' type='email' onChange={this.changeHandler} placeholder='Enter Email' />
-                                    <Form.Control id='password' type='password' onChange={this.changeHandler} placeholder='Enter Password' />
-                                    <Form.Control id='confirmPassword' type='password' onChange={this.changeHandler} placeholder='Confirm Password' />
-                                    <Button variant='secondary' type='submit'>Sign Up</Button>
-                                    { this.match ? 
-                                        <div style={{ position: 'absolute', bottom: '0', width: '89%', textAlign: 'center'}}>
+                            <div className='up-block d-flex justify-content-center align-items-center'>
+                                <Form onSubmit={this.submitHandler} className='d-flex w-100 justify-content-center flex-column align-items-center'>
+                                    <Form.Control id='name' type='text' onChange={this.changeHandler} placeholder='Enter your name' className='my-2' />
+                                    <Form.Control id='email' type='email' onChange={this.changeHandler} placeholder='Enter Email' className='my-2' />
+                                    <Form.Control id='password' type='password' onChange={this.changeHandler} placeholder='Enter Password' className='my-2' />
+                                    <Form.Control id='confirmPassword' type='password' onChange={this.changeHandler} placeholder='Confirm Password' className='my-2' />
+                                    <Button variant='secondary' type='submit' className='mt-2'>Sign Up</Button>
+                                    {this.match ?
+                                        <div style={{ position: 'absolute', bottom: '0', width: '89%', textAlign: 'center' }}>
                                             <Alert variant={'danger'}>Please re-enter the password</Alert>
-                                        </div> 
-                                    : null}
+                                        </div>
+                                        : null}
                                 </Form>
                             </div>
                         </div>

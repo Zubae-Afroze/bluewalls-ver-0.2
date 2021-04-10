@@ -7,17 +7,17 @@ const PreSurvey = (props) => {
 
     const { auth } = props;
 
-    if(!auth.uid) return <Redirect to='/signin' />
+    if (!auth.uid) return <Redirect to='/signin' />
 
     return (
         <div className='bg-pre'>
             <Container>
                 <Link to='/'>
-                    <div className='brand brand-light mt-3'>
+                    <div className='brand brand-light pt-3'>
                         <h1>Bluewalls</h1>
                     </div>
                 </Link>
-                <div className='d-flex flex-column justify-content-center align-items-center option-main'>
+                <div className='d-flex flex-column justify-content-center text-center align-items-center option-main'>
                     <h1>Please click on any one from below options.</h1>
                     <div className='option-wrap option-disabled'>
                         <Link to='/presurvey' className='d-flex flex-row justify-content-around align-items-center'>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Form, Button } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -21,51 +21,55 @@ class CustomerSurvey extends Component {
             [e.target.id]: e.target.value
         })
     }
-    
-    
+
+
     submitHandler = (e) => {
         e.preventDefault();
         this.props.customerSurveySubmit(this.state)
     }
 
-    
-    render(){
+
+    render() {
 
         const { auth } = this.props;
 
-        if(!auth.uid) return <Redirect to='/signin' />
+        if (!auth.uid) return <Redirect to='/signin' />
 
         return (
             <div className='bg-customer'>
-                <Container>
+                <div className='container '>
                     <Link to='/'>
-                        <div className='brand brand-light mt-3'>
+                        <div className='brand brand-light pt-3'>
                             <h1>Bluewalls</h1>
                         </div>
                     </Link>
-                    <div className='survey-block'>
-                        <div className='back-btn'><Link to='/presurvey'><i className="fas fa-chevron-left"></i>Go Back</Link></div>
-                        <Form onSubmit={this.submitHandler}>
-                            <Form.Group>
-                                <Form.Label>Question 1</Form.Label>
-                                <Form.Control type='text' id='question1' onChange={this.changeHandler} placeholder='Answer'/>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Label>Question 2</Form.Label>
-                                <Form.Control type='text' id='question2' onChange={this.changeHandler} placeholder='Answer'/>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Label>Question 3</Form.Label>
-                                <Form.Control type='text' id='question3' onChange={this.changeHandler} placeholder='Answer'/>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Label>Question 4</Form.Label>
-                                <Form.Control type='text' id='question4' onChange={this.changeHandler} placeholder='Answer'/>
-                            </Form.Group>
-                            <Button variant='secondary' type='submit'>Submit</Button>
-                        </Form>
+                    <div className='d-flex justify-content-center mt-4'>
+                        <div className='survey-block pt-3'>
+                            <div className='back-btn ml-3'><Link to='/presurvey'><i className="fas fa-chevron-left"></i>Go Back</Link></div>
+                            <div className='d-flex justify-content-center '>
+                                <Form onSubmit={this.submitHandler}>
+                                    <Form.Group>
+                                        <Form.Label>Question 1</Form.Label>
+                                        <Form.Control type='text' id='question1' onChange={this.changeHandler} placeholder='Answer' />
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Label>Question 2</Form.Label>
+                                        <Form.Control type='text' id='question2' onChange={this.changeHandler} placeholder='Answer' />
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Label>Question 3</Form.Label>
+                                        <Form.Control type='text' id='question3' onChange={this.changeHandler} placeholder='Answer' />
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Label>Question 4</Form.Label>
+                                        <Form.Control type='text' id='question4' onChange={this.changeHandler} placeholder='Answer' />
+                                    </Form.Group>
+                                    <Button variant='secondary' type='submit'>Submit</Button>
+                                </Form>
+                            </div>
+                        </div>
                     </div>
-                </Container>
+                </div>
             </div>
         )
     }
@@ -78,7 +82,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return{
+    return {
         customerSurveySubmit: (survey) => dispatch(customerSurveySubmit(survey))
     }
 }
