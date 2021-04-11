@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 import { signUp } from '../Store/Actions/authActions'
 class SignUp extends Component {
     /*
-     onChange.
-     form state abstraction
-     state => diabled, loading, error.
-     use name attrib instead of id.
+    * onChange.
+    * form state abstraction
+    * state => diabled, loading, error.
+    * use name attrib instead of id.
     */
     constructor(props) {
         super(props);
