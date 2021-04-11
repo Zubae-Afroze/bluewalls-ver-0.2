@@ -1,5 +1,3 @@
-
-
 export const customerSurveySubmit = (survey) => {
     return (dispatch, getState, {getFirebase, getFirestore}) => {
         //Make async call to the database

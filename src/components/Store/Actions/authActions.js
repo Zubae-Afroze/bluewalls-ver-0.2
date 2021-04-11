@@ -16,7 +16,6 @@ export const emailAuth = (credentials) => {
 export const signOut = () => {
     return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();
-
         firebase.auth().signOut().then(() => {
             dispatch({ type: 'SIGNOUT_SUCCESS'})
         });
@@ -32,8 +31,9 @@ export const signUp = (newUser) => {
             newUser.email, newUser.password
         ).then((res) => {
             return firestore.collection('users').doc(res.user.uid).set({
-                name: newUser.name,
-                initials: newUser.name[0] + newUser.name[1],
+                fname: newUser.fname,
+                lname: newUser.lname,
+                initials: newUser.fname[0] + newUser.lname[0],
                 acountType: null
             })
         }).then(() => {

@@ -11,9 +11,15 @@ class CustomerSurvey extends Component {
         this.state = {
             location: '',
             circle: '',
-            question2: '',
-            question3: '',
-            question4: ''
+            rooms: '',
+            area: '',
+            apartmentType: {
+                
+            },
+            floorPreference: '',
+            furnishing: {
+                
+            }
         }
     }
 
