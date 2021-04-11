@@ -381,7 +381,7 @@ Customer Survey Styles
 */
 .bg-customer {
   background-attachment: fixed;
-  height: 100vh;
+  height: 110vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
     url(./components/Survey/customer_bg.jpg);
   background-size: cover;
@@ -431,6 +431,18 @@ Customer Survey Styles
   margin-bottom: 20px;
 }
 
+/*
+Survey Response
+*/
+.response-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url(./components/Survey/customer_bg.jpg);
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: 0 0;
+  background-size: cover;
+}
+
 @media (min-width: 922px) {
   .landing-col-one {
     display: flex;
@@ -459,7 +471,7 @@ Customer Survey Styles
     padding: 0;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   body,
   html {
     overflow-y: scroll;

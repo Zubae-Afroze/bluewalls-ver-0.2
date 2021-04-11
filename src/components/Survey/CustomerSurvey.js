@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { customerSurveySubmit } from '../Store/Actions/customerSurveySubmit';
@@ -23,6 +23,8 @@ class CustomerSurvey extends Component {
         }
     }
 
+    
+
     changeHandler = (e) => {
         this.setState({
             [e.target.id]: e.target.value
@@ -32,19 +34,19 @@ class CustomerSurvey extends Component {
 
     submitHandler = (e) => {
         e.preventDefault();
-        this.props.customerSurveySubmit(this.state)
+        this.props.customerSurveySubmit(this.state);
+        this.props.history.push('/surveyresponse');
     }
 
 
     render() {
-
         const { auth } = this.props;
 
         if (!auth.uid) return <Redirect to='/signin' />
 
         return (
             <div className='bg-customer'>
-                <div className='container '>
+                <div className='container'>
                     <Link to='/'>
                         <div className='brand brand-light pt-3'>
                             <h1>Bluewalls</h1>
@@ -119,4 +121,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CustomerSurvey)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CustomerSurvey))
