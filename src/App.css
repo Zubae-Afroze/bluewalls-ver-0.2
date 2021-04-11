@@ -146,10 +146,7 @@ Landing styles
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.bg-top-negative {
-  background-position-y: -300px;
+  height: 100vh;
 }
 
 .video-div {
@@ -416,12 +413,13 @@ Customer Survey Styles
 .survey-block button {
   margin-bottom: 20px;
 }
+
 @media (min-width: 922px) {
   .landing-col-one {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 60% !important;
+    width: 40% !important;
   }
   .landing-section {
     max-width: 95vw;
@@ -430,11 +428,11 @@ Customer Survey Styles
     width: 30% !important;
   }
   .video-div {
-    height: clamp(70%, 70%, 70%);
+    height: 50vh;
     width: 100%;
   }
   .text-div {
-    height: clamp(70%, 70%, 70%);
+    height: 50vh;
   }
   .video-div video {
     width: 100%;
