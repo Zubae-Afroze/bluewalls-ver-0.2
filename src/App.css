@@ -107,8 +107,12 @@ Navbar Styles
 
 .brand-light h1 {
   font-size: 2rem;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   /* text-shadow: 1px 1px rgb(61, 61, 61); */
+}
+
+.brand-dark {
+  color: #000 !important;
 }
 
 .logged-in {

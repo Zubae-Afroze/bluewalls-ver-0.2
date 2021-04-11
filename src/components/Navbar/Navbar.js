@@ -18,7 +18,7 @@ const Menubar = (props) => {
             <div className='d-flex justify-content-between py-2 py-sm-0'>
                 <Link to='/'>
                     <div className='brand brand-light pt-3'>
-                        <h1>Bluewalls</h1>
+                        <h1 className='brand-dark'>Bluewalls</h1>
                     </div>
                 </Link>
                 {auth.uid ?
