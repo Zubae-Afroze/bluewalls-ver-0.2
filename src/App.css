@@ -23,7 +23,10 @@ Font Imports
   src: url('./fonts/akaDora.ttf') format('truetype'),
     url('./fonts/akaDora.otf') format('otf');
 }
-
+@font-face {
+  font-family: 'trebuchet';
+  src: url('./fonts/Trebuchet_MS.ttf') format('truetype');
+}
 /*
 Bootstrap Overrides
 */
@@ -74,7 +77,7 @@ a:active {
 Global Styles
 */
 .page-height {
-  height: 90vh;
+  height: 70vh;
 }
 
 .btn-main {
@@ -89,15 +92,23 @@ a:hover {
 /*
 Navbar Styles
 */
+.nav-section {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(11.5px);
+  -webkit-backdrop-filter: blur(11.5px);
+  border-radius: 0px;
+}
 .brand {
-  font-family: 'akaDora';
+  font-family: 'trebuchet';
   font-size: 30px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
 }
 
-.brand-light {
-  color: #fff;
-  text-shadow: 2px 5px #000;
+.brand-light h1 {
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  /* text-shadow: 1px 1px rgb(61, 61, 61); */
 }
 
 .logged-in {
@@ -146,21 +157,25 @@ Landing styles
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .bg-top-negative {
   background-position-y: -300px;
 }
-
+.landing-section {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(11.5px);
+  -webkit-backdrop-filter: blur(11.5px);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 .video-div {
   width: 950px;
   height: 550px;
-  background: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .video-div video {
@@ -173,12 +188,6 @@ Landing styles
 .text-div {
   width: 80%;
   height: 550px;
-  background: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .text-div h3 {
@@ -186,7 +195,8 @@ Landing styles
 }
 
 .text-div h1 {
-  font-family: 'akaDora';
+  font-family: 'trebuchet';
+  font-size: 2rem;
 }
 
 /* 
@@ -424,7 +434,8 @@ Customer Survey Styles
     width: 60% !important;
   }
   .landing-section {
-    max-width: 95vw;
+    max-width: 1000px;
+    margin: 1rem 1rem;
   }
   .landing-col-two {
     width: 30% !important;

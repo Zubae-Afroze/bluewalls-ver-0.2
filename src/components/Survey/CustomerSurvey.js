@@ -9,7 +9,8 @@ class CustomerSurvey extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            question1: '',
+            location: '',
+            circle: '',
             question2: '',
             question3: '',
             question4: ''
@@ -48,16 +49,24 @@ class CustomerSurvey extends Component {
                             <div className='back-btn ml-3'><Link to='/presurvey'><i className="fas fa-chevron-left"></i>Go Back</Link></div>
                             <div className='d-flex justify-content-center '>
                                 <Form onSubmit={this.submitHandler}>
-                                    <Form.Group>
-                                        <Form.Label>Question 1</Form.Label>
-                                        <Form.Control type='text' id='question1' onChange={this.changeHandler} placeholder='Answer' />
+                                    <Form.Group className="d-flex">
+                                        <Form.Label className='mr-2 pt-1'>Location</Form.Label>
+                                        <Form.Control className='w-50' type='text' id='location' onChange={this.changeHandler} placeholder='Answer' />
+                                        <Form.Label className='mx-2 pt-1'>Circle</Form.Label>
+                                        <Form.Control type='text' className='w-50' id='circle' onChange={this.changeHandler} placeholder='Kms' />
+                                    </Form.Group>
+                                    <Form.Group className="d-flex">
+                                        <Form.Label className='mr-3 pt-1'>Rooms</Form.Label>
+                                        <Form.Control className='w-50' type='text' id='location' onChange={this.changeHandler} placeholder='Answer' />
+                                        <Form.Label className='mx-2 pt-1'>Area</Form.Label>
+                                        <Form.Control type='text' className='w-50' id='circle' onChange={this.changeHandler} placeholder='In m2' />
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Label>Question 2</Form.Label>
                                         <Form.Control type='text' id='question2' onChange={this.changeHandler} placeholder='Answer' />
                                     </Form.Group>
                                     <Form.Group>
-                                        <Form.Label>Question 3</Form.Label>
+                                        <Form.Label>Apartment Type</Form.Label>
                                         <Form.Control type='text' id='question3' onChange={this.changeHandler} placeholder='Answer' />
                                     </Form.Group>
                                     <Form.Group>
