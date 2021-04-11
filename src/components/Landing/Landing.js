@@ -19,7 +19,8 @@ const Landing = (props) => {
                                 </video>
                             </div>
                             <div className='text-div landing-col-two  my-sm-0 d-flex flex-column justify-content-around align-items-center my-md-3'>
-                                <h3>Welcome to</h3>
+                                <h5 className='text-center pt-2'>Easy and economical means to find your dream home</h5>
+                                <h5>Welcome to</h5>
                                 <h1>Bluewalls</h1>
                                 <Link to='/signup'><Button variant='secondary'>Get Started</Button></Link>
                             </div>

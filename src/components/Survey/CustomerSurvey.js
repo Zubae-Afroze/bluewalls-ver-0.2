@@ -61,17 +61,34 @@ class CustomerSurvey extends Component {
                                         <Form.Label className='mx-2 pt-1'>Area</Form.Label>
                                         <Form.Control type='text' className='w-50' id='circle' onChange={this.changeHandler} placeholder='In m2' />
                                     </Form.Group>
-                                    <Form.Group>
-                                        <Form.Label>Question 2</Form.Label>
-                                        <Form.Control type='text' id='question2' onChange={this.changeHandler} placeholder='Answer' />
+                                    <Form.Group id="apartmentType">
+                                        <Form.Label>Apartment Type</Form.Label>
+                                        <Form.Group className='d-flex flex-wrap justify-content-start'>
+                                            <Form.Check type="checkbox" label="Basement" className='m-2' />
+                                            <Form.Check type="checkbox" label="Ground Floor" className='m-2' />
+                                            <Form.Check type="checkbox" label="Mezzanine Floor" className='m-2' />
+                                            <Form.Check type="checkbox" label="Flat" className='m-2' />
+                                            <Form.Check type="checkbox" label="Loft" className='m-2' />
+                                            <Form.Check type="checkbox" label="Maisonette" className='m-2' />
+                                            <Form.Check type="checkbox" label="Terrace Apartment" className='m-2' />
+                                            <Form.Check type="checkbox" label="Penthouse" className='m-2' />
+                                            <Form.Check type="checkbox" label="Attic" className='m-2' />
+                                            <Form.Check type="checkbox" label="Other" className='m-2' />
+                                        </Form.Group>
                                     </Form.Group>
                                     <Form.Group>
-                                        <Form.Label>Apartment Type</Form.Label>
+                                        <Form.Label>Floor Preference</Form.Label>
                                         <Form.Control type='text' id='question3' onChange={this.changeHandler} placeholder='Answer' />
                                     </Form.Group>
-                                    <Form.Group>
-                                        <Form.Label>Question 4</Form.Label>
-                                        <Form.Control type='text' id='question4' onChange={this.changeHandler} placeholder='Answer' />
+                                    <Form.Group id="question4">
+                                        <Form.Label>Furnishing</Form.Label>
+                                        <Form.Group className='d-flex flex-wrap justify-content-start'>
+                                            <Form.Check type="checkbox" label="Garage /Parking Space" className='m-2' />
+                                            <Form.Check type="checkbox" label="Equipped Kitchen" className='m-2' />
+                                            <Form.Check type="checkbox" label="Passenger Elevator" className='m-2' />
+                                            <Form.Check type="checkbox" label="Basement,Cellar" className='m-2' />
+                                            <Form.Check type="checkbox" label="Guest Toilet" className='m-2' />
+                                        </Form.Group>
                                     </Form.Group>
                                     <Button variant='secondary' type='submit'>Submit</Button>
                                 </Form>

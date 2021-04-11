@@ -114,11 +114,11 @@ Navbar Styles
 .logged-in {
   font-size: 20px;
   background-color: rgba(255, 255, 255, 0);
-  color: #fff;
+  color: rgb(14, 0, 141);
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: solid 1px #fff;
+  border: solid 1px rgb(14, 0, 141);
   cursor: pointer;
   position: relative;
   user-select: none;
@@ -153,7 +153,7 @@ Landing styles
 */
 .landing-bg {
   background-attachment: fixed;
-  background-image: url(./components//Landing/landBg.jpg);
+  background-image: url(./components//Landing/landBg.jfif);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -164,7 +164,7 @@ Landing styles
   background-position-y: -300px;
 }
 .landing-section {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.11);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(11.5px);
   -webkit-backdrop-filter: blur(11.5px);
@@ -377,7 +377,7 @@ Customer Survey Styles
 */
 .bg-customer {
   background-attachment: fixed;
-  height: 100vh;
+  height: max-content;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
     url(./components/Survey/customer_bg.jpg);
   background-size: cover;
@@ -445,7 +445,7 @@ Customer Survey Styles
     width: 100%;
   }
   .text-div {
-    height: clamp(70%, 70%, 70%);
+    height: clamp(60%, 10%, 60%);
   }
   .video-div video {
     width: 100%;
