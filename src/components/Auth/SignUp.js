@@ -8,7 +8,8 @@ class SignUp extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
+            fname: '',
+            lname: '',
             email: '',
             password: '',
             confirmPassword: '',
@@ -42,7 +43,7 @@ class SignUp extends Component {
         return (
             <div className='bg-sign'>
                 <Link to='/'>
-                    <div className='brand brand-light pt-4 pl-3'>
+                    <div className='brand brand-light pt-3 pl-3'>
                         <h1>Bluewalls</h1>
                     </div>
                 </Link>
@@ -55,11 +56,14 @@ class SignUp extends Component {
                             </div>
                             <div className='up-block d-flex justify-content-center align-items-center'>
                                 <Form onSubmit={this.submitHandler} className='d-flex w-100 justify-content-center flex-column align-items-center'>
-                                    <Form.Control id='name' type='text' onChange={this.changeHandler} placeholder='Enter your name' className='my-2' />
+                                    <Form.Group className='d-flex '>
+                                        <Form.Control id='fname' type='text' onChange={this.changeHandler} placeholder='Enter your first name' className='my-2 w-50 pr-1 mr-1' />
+                                        <Form.Control id='lname' type='text' onChange={this.changeHandler} placeholder='Enter your last name' className='my-2 w-50 pl-1 ml-1' />
+                                    </Form.Group>
                                     <Form.Control id='email' type='email' onChange={this.changeHandler} placeholder='Enter Email' className='my-2' />
                                     <Form.Control id='password' type='password' onChange={this.changeHandler} placeholder='Enter Password' className='my-2' />
-                                    <Form.Label className='w-75 px-5 text-center' style={{ fontSize: "0.75rem", height: "fit-content", margin: "0" }}>password must contain letters and numbers and be 8-16 characters</Form.Label>
                                     <Form.Control id='confirmPassword' type='password' onChange={this.changeHandler} placeholder='Confirm Password' className='my-2' />
+                                    <Form.Label className='w-75 px-5 text-center' style={{ fontSize: "0.75rem", height: "fit-content", margin: "0" }}>password must contain letters and numbers and be 8-16 characters</Form.Label>
                                     <Button variant='secondary' type='submit' className='mt-2'>Sign Up</Button>
                                     {this.match ?
                                         <div style={{ position: 'absolute', bottom: '0', width: '89%', textAlign: 'center' }}>

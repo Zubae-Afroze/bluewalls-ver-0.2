@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 const Landing = (props) => {
 
+    console.log(props)
     return (
         <React.Fragment>
             <div className='landing-bg'>
