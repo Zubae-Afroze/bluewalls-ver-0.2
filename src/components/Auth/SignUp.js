@@ -58,6 +58,7 @@ class SignUp extends Component {
                                     <Form.Control id='name' type='text' onChange={this.changeHandler} placeholder='Enter your name' className='my-2' />
                                     <Form.Control id='email' type='email' onChange={this.changeHandler} placeholder='Enter Email' className='my-2' />
                                     <Form.Control id='password' type='password' onChange={this.changeHandler} placeholder='Enter Password' className='my-2' />
+                                    <Form.Label className='w-75 px-5 text-center' style={{ fontSize: "0.75rem", height: "fit-content", margin: "0" }}>password must contain letters and numbers and be 8-16 characters</Form.Label>
                                     <Form.Control id='confirmPassword' type='password' onChange={this.changeHandler} placeholder='Confirm Password' className='my-2' />
                                     <Button variant='secondary' type='submit' className='mt-2'>Sign Up</Button>
                                     {this.match ?
