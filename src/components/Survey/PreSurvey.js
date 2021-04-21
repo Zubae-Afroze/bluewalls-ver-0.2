@@ -14,7 +14,9 @@ const PreSurvey = (props) => {
             <Container>
                 <Link to='/'>
                     <div className='brand brand-light pt-3'>
-                        <h1>Bluewalls</h1>
+                        {/* <h1>Bluewalls</h1> */}
+                        <img src='/bluelogo.png' alt='bluewalls-logo' className='bluelogo' />
+
                     </div>
                 </Link>
                 <div className='d-flex flex-column justify-content-center text-center align-items-center option-main'>
@@ -28,12 +30,12 @@ const PreSurvey = (props) => {
                     <div className='option-wrap option-disabled'>
                         <Link to='/presurvey' className='d-flex flex-row justify-content-around align-items-center'>
                             <div><i className="fas fa-building"></i></div>
-                            <div>Builder</div>
+                            <div className='mr-1 mr-sm-1'>Builder</div>
                         </Link>
                     </div>
                     <div className='option-wrap'>
                         <Link to='/customersurvey' className='d-flex flex-row justify-content-around align-items-center'>
-                            <div><i className="fas fa-smile"></i></div>
+                            <div><i className="fas fa-smile ml-2 ml-sm-0"></i></div>
                             <div>Customer</div>
                         </Link>
                     </div>

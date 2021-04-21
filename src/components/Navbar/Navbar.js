@@ -18,7 +18,8 @@ const Menubar = (props) => {
             <div className='d-flex justify-content-between py-2 py-sm-0'>
                 <Link to='/'>
                     <div className='brand brand-light pt-3'>
-                        <h1 className='brand-dark'>Bluewalls</h1>
+                        {/* <h1 className='brand-dark'>Bluewalls</h1> */}
+                        <img src='/bluelogo.png' alt='bluewalls-logo' className='bluelogo' />
                     </div>
                 </Link>
                 {auth.uid ?
@@ -27,12 +28,12 @@ const Menubar = (props) => {
                     >
                         TU
                         {
-                    drop ? <div className='d-flex flex-column justify-content-center align-items-center mt-3 log-menu'>
-                        <p onClick={clickHandler} className='mt-3'>Logout</p>
-                        <p>Dashboard</p>
-                    </div> : null
-                }
-                </div>
+                            drop ? <div className='d-flex flex-column justify-content-center align-items-center mt-3 log-menu'>
+                                <p onClick={clickHandler} className='mt-3'>Logout</p>
+                                <p>Dashboard</p>
+                            </div> : null
+                        }
+                    </div>
                     :
                     <div className='pt-1 flex-column d-flex justify-content-center'>
                         <div className='d-flex my-2 my-sm-0' >
@@ -41,7 +42,7 @@ const Menubar = (props) => {
                         </div>
                     </div>
                 }
-                
+
             </div>
         </div>
     )
