@@ -467,6 +467,11 @@ Survey Response
     padding: 0;
   }
 }
+
+.survey-wrap {
+  margin-top: 10vh;
+}
+
 @media (max-width: 1200px) {
   body,
   html {
