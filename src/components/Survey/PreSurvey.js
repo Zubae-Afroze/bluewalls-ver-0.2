@@ -15,8 +15,7 @@ const PreSurvey = (props) => {
                 <Link to='/'>
                     <div className='brand brand-light pt-3'>
                         {/* <h1>Bluewalls</h1> */}
-                        <img src='/bluelogo.png' alt='bluewalls-logo' className='bluelogo' />
-
+                        <img src='/bluelogoinvert.jpg' alt='bluewalls-logo' className='bluelogo' />
                     </div>
                 </Link>
                 <div className='d-flex flex-column justify-content-center text-center align-items-center option-main'>

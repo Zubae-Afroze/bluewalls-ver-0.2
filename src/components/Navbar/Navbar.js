@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { signOut } from '../Store/Actions/authActions';
 
 const Menubar = (props) => {
-    const { auth } = props;
+    const { auth, profile } = props;
 
     const [drop, setDrop] = useState(false)
 
@@ -26,7 +26,7 @@ const Menubar = (props) => {
                     <div className='d-flex align-items-center justify-content-center logged-in mt-3 mr-3'
                         onClick={() => setDrop(!drop)}
                     >
-                        TU
+                        {profile.initials}
                         {
                             drop ? <div className='d-flex flex-column justify-content-center align-items-center mt-3 log-menu'>
                                 <p onClick={clickHandler} className='mt-3'>Logout</p>
@@ -49,8 +49,10 @@ const Menubar = (props) => {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
-        auth: state.firebase.auth
+        auth: state.firebase.auth,
+        profile: state.firebase.profile
     }
 }
 
