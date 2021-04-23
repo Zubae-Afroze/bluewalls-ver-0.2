@@ -7,7 +7,8 @@ const SurveyResponse = () => {
             <div className='container'>
                 <Link to='/'>
                     <div className='brand brand-light pt-3'>
-                        <h1>Bluewalls</h1>
+                        {/* <h1 className='brand-dark'>Bluewalls</h1> */}
+                        <img src='/bluelogo.png' alt='bluewalls-logo' className='bluelogo' />
                     </div>
                 </Link>
             </div>
