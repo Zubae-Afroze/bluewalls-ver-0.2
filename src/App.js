@@ -9,6 +9,7 @@ import PreSurvey from './components/Survey/PreSurvey';
 import './App.css';
 import CustomerSurvey from './components/Survey/CustomerSurvey';
 import SurveyResponse from './components/Survey/SurveyResponse';
+import Dashboard from './components/Dashboard/Dashboard';
 
 
 
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/presurvey' render={() => (<PreSurvey />)} />
         <Route path='/customersurvey'  render={() => (<CustomerSurvey />)} />
         <Route path='/surveyresponse'  render={() => (<SurveyResponse />)} />
+        <Route path='/dashboard' render={() => (<Dashboard />)} />
         <Route path='/' component={Landing} exact/>
       </Switch>
     </Router>

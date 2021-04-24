@@ -30,7 +30,7 @@ const Menubar = (props) => {
                         {
                             drop ? <div className='d-flex flex-column justify-content-center align-items-center mt-3 log-menu'>
                                 <p onClick={clickHandler} className='mt-3'>Logout</p>
-                                <p>Dashboard</p>
+                                <Link to='/dashboard'><p>Dashboard</p></Link>
                             </div> : null
                         }
                     </div>
