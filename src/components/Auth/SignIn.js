@@ -37,7 +37,7 @@ class SignIn extends Component {
                 <>
                     <Link to='/'>
                         <div className='brand brand-light pt-3 pl-3'>
-                            <img src='/bluelogoinvert.jpg' alt='bluewalls-logo' className='bluelogo' />
+                            <img src='/bluelogoinvert.png' alt='bluewalls-logo' className='bluelogo' />
                         </div>
                     </Link>
                     <div className='container-lg d-md-flex flex-md-column justify-content-md-center signup-sec'>

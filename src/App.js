@@ -11,8 +11,6 @@ import CustomerSurvey from './components/Survey/CustomerSurvey';
 import SurveyResponse from './components/Survey/SurveyResponse';
 import Dashboard from './components/Dashboard/Dashboard';
 
-
-
 const App = () => {
   return (
     <Router>

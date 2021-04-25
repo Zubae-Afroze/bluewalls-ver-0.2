@@ -13,22 +13,23 @@ class CustomerSurvey extends Component {
             circle: '',
             rooms: '',
             area: '',
-            basement: false,
-            goundFloor: false,
-            mezzanineFloor: false,
-            flat: false,
-            loft: false,
-            masionette: false,
-            terraceApartment: false,
-            penthouse: false,
-            attic: false,
-            other: false,
-            floorPreference: '',
-            garage: false,
-            equipedKitchen: false,
-            passengerElevator: false,
-            cellar: false,
-            guestToilet: false,
+            // basement: false,
+            // goundFloor: false,
+            // mezzanineFloor: false,
+            // flat: false,
+            // loft: false,
+            // masionette: false,
+            // terraceApartment: false,
+            // penthouse: false,
+            // attic: false,
+            // other: false,
+            // floorPreference: '',
+            // garage: false,
+            // equipedKitchen: false,
+            // passengerElevator: false,
+            // cellar: false,
+            // guestToilet: false,
+            checked: [],
             surveyType: 'customer'
         }
     }
@@ -43,17 +44,26 @@ class CustomerSurvey extends Component {
     }
 
     checkHandler = (e) => {
-        this.setState({
-            ...this.state,
-            [e.target.name]: e.target.checked
-        })
+        if (e.target.checked) {
+            this.setState({
+                ...this.state,
+                checked: [...this.state.checked, e.target.name]
+            })
+        } else {
+            const checked = this.state.checked.filter(obj => obj !== e.target.name)
+            this.setState({
+                ...this.state,
+                checked: checked
+            })
+        }
+    
     }
 
 
     submitHandler = (e) => {
         e.preventDefault();
         this.props.customerSurveySubmit(this.state);
-        this.props.history.push('/surveyresponse');
+        this.props.history.push('/dashboard');
         console.log(this.state);
     }
 
@@ -69,7 +79,7 @@ class CustomerSurvey extends Component {
                     <Link to='/'>
                         <div className='brand brand-light pt-3'>
                             {/* <h1 className='brand-dark'>Bluewalls</h1> */}
-                            <img src='/bluelogoinvert.jpg' alt='bluewalls-logo' className='bluelogo' />
+                            <img src='/bluelogoinvert.png' alt='bluewalls-logo' className='bluelogo' />
                         </div>
                     </Link>
                     <div className='d-flex justify-content-center survey-wrap'>
